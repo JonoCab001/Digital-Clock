@@ -5,10 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Digital Clock</title>
     <link rel="stylesheet" href="css/styles.css">
-    <script src="js/script.js" type="text/JavaScript" async></script>
+    <script src="js/script.js"></script>
 </head>
 <body>
     <p>Digital Clock made using JavaScript</p>
-    <div id="DisplayClock" class="Clock" onload="showTime()"></div>
+    <div class="container">
+        <span id="hours">00</span>
+        <span>:</span>
+        <span id="mins">00</span>
+        <span>:</span>
+        <span id="secs">00</span>
+        <span id="session">AM</span>
+    </div>
 </body>
 </html>

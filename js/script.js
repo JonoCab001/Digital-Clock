@@ -1,28 +1,26 @@
 function showTime(){
-    var date = new Date();
-    var h = date.getHours();
-    var m = date.getMinutes();
-    var s = date.getSeconds();
-    var session = "AM";
+    var dateTime = new Date();
+    var h = dateTime.getHours();
+    var m = dateTime.getMinutes();
+    var s = dateTime.getSeconds();
+    var session = document.getElementById('session');
 
-    if(h == 0){
-        h = 12;
+    // Change sessions from Day to Night
+    if(h >= 12){
+        session.innerHTML = 'PM';
+    }
+    else{
+        session.innerHTML = 'AM';
     }
 
+    // Show time in 12 hr format
     if(h > 12){
         h = h - 12;
-        session = "PM";
     }
 
-    h = (h > 10) ? "0" + h : h;
-    m = (h < 10) ? "0" + m : m;
-    s = (s < 10) ? "0" + s : s;
-
-    var line = h + ":" + s + " " + session;
-    document.getElementById("DisplayClock").innerText = time;
-    document.getElementById("DisplayClock").textContent = time;
-
-    setTimeout(showTime, 1000);
+    document.getElementById('hours').innerHTML = h;
+    document.getElementById('mins').innerHTML = m;
+    document.getElementById('secs').innerHTML = s;
 }
 
-showTime();
+setInterval(showTime, 10);
